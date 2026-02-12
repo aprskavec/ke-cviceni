@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Champ font - for large headings and primary buttons */
+@font-face {
+  font-family: 'Champ';
+  src: url('/fonts/Champ-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Champ';
+  src: url('/fonts/Champ-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Champ';
+  src: url('/fonts/Champ-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Champ';
+  src: url('/fonts/Champ-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 68 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 68 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 348 100% 50%;
+    --destructive-end: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --streak-fire: 12 100% 60%;
+    --streak-freeze: 195 100% 50%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 68 100% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 68 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 68 100% 50%;
+
+    /* ── Base Colors (from Kotlin spec) ── */
+    --base-black: #09090B;
+    --base-grey: #71717A;
+    --base-white: #FAFAFA;
+    --base-red: #FF0018;
+    --base-pink: #FF01AA;
+    --base-green: #D0FF01;
+    --base-dark-green: #6DD900;
+    --base-blue: #02BBFF;
+    --base-purple: #9E49FF;
+    --base-yellow: #FFDC00;
+
+    /* ── Neutral Scale ── */
+    --neutral-0: #FFFFFF;
+    --neutral-50: #FAFAFA;
+    --neutral-100: #F4F4F5;
+    --neutral-150: #EEEEF1;
+    --neutral-200: #E4E4E7;
+    --neutral-300: #D4D4D8;
+    --neutral-400: #A1A1AA;
+    --neutral-500: #71717A;
+    --neutral-600: #52525B;
+    --neutral-700: #3F3F46;
+    --neutral-800: #27272A;
+    --neutral-900: #18181B;
+    --neutral-950: #09090B;
+    --neutral-1000: #000000;
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 68 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 68 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 348 100% 50%;
+    --destructive-end: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --streak-fire: 12 100% 50%;
+    --streak-freeze: 195 100% 40%;
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 68 100% 40%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 68 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 68 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 348 100% 50%;
+    --destructive-end: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 68 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Enhanced focus states with glowing primary color */
+  input:focus,
+  textarea:focus,
+  select:focus,
+  [contenteditable="true"]:focus {
+    --tw-ring-color: hsl(var(--primary));
+    box-shadow: 
+      0 0 0 2px hsl(var(--background)),
+      0 0 0 4px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  /* Focus-visible for keyboard navigation */
+  button:focus-visible,
+  a:focus-visible,
+  [role="button"]:focus-visible {
+    outline: none;
+    box-shadow: 
+      0 0 0 2px hsl(var(--background)),
+      0 0 0 4px hsl(var(--primary) / 0.6),
+      0 0 16px hsl(var(--primary) / 0.4);
+  }
+}
+
+@layer components {
+  .lesson-line {
+    @apply absolute left-[26px] top-[52px] w-[2px] bg-border;
+    height: calc(100% - 52px);
+  }
+
+  .lesson-node {
+    @apply w-[52px] h-[52px] rounded-full border-2 border-border flex items-center justify-center bg-card transition-all duration-300;
+  }
+
+  .lesson-node-active {
+    @apply border-primary bg-primary/10;
+  }
+
+  .lesson-node-locked {
+    @apply opacity-60;
+  }
+
+  .stat-badge {
+    @apply flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold;
+  }
+
+  .stat-badge-fire {
+    @apply bg-[hsl(var(--streak-fire))]/20 text-[hsl(var(--streak-fire))];
+  }
+
+  .stat-badge-freeze {
+    @apply bg-[hsl(var(--streak-freeze))]/20 text-[hsl(var(--streak-freeze))];
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-200;
+  }
+
+  .nav-item-active {
+    @apply text-primary;
+  }
+
+  .bottom-nav {
+    @apply fixed bottom-4 left-4 right-4 border border-border/50 rounded-[28px] p-2 flex items-center justify-around;
+    background: hsl(var(--background) / 0.6);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  }
+
+  .level-selector {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-foreground font-medium text-sm;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-[hsl(80,100%,60%)] bg-clip-text text-transparent;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(68 100% 50% / 0.3);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpSmall {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe area utilities for iOS */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Dev Assistant component highlight */
+.dev-highlight {
+  outline: 3px solid hsl(var(--primary));
+  outline-offset: 4px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3), inset 0 0 20px hsl(var(--primary) / 0.05);
+  transition: outline 200ms ease, box-shadow 200ms ease;
+}
