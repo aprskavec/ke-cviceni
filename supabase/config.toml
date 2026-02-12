@@ -1,0 +1,93 @@
+project_id = "lgccnltkrnolbzwybnio"
+
+[functions.generate-exercises]
+enabled = true
+verify_jwt = false
+
+[functions.generate-sticker]
+enabled = true
+verify_jwt = false
+
+[functions.generate-kuba-sticker]
+enabled = true
+verify_jwt = false
+
+[functions.generate-audio]
+enabled = true
+verify_jwt = false
+
+[functions.elevenlabs-tts]
+enabled = true
+verify_jwt = false
+
+[functions.validate-answer]
+enabled = true
+verify_jwt = false
+
+[functions.batch-generate-audio]
+enabled = true
+verify_jwt = false
+
+[functions.generate-banners]
+enabled = true
+verify_jwt = false
+
+[functions.generate-banner-creative]
+enabled = true
+verify_jwt = false
+
+[functions.edit-banner-creative]
+enabled = true
+verify_jwt = false
+
+[functions.remove-background]
+enabled = true
+verify_jwt = false
+
+[functions.analyze-face]
+enabled = true
+verify_jwt = false
+
+[functions.analyze-face-background]
+enabled = true
+verify_jwt = false
+
+[functions.export-lessons-json]
+enabled = true
+verify_jwt = false
+
+[functions.import-lessons-csv]
+enabled = true
+verify_jwt = false
+
+[functions.parse-csv-metadata]
+enabled = true
+verify_jwt = false
+
+[functions.generate-idea-description]
+enabled = true
+verify_jwt = false
+
+[functions.generate-idiom-ideas]
+enabled = true
+verify_jwt = false
+
+[functions.batch-generate-idiom-creatives]
+enabled = true
+verify_jwt = false
+
+[functions.select-best-face]
+enabled = true
+verify_jwt = false
+
+[functions.process-generation-queue]
+enabled = true
+verify_jwt = false
+
+[functions.dev-assistant]
+enabled = true
+verify_jwt = false
+
+[functions.seed-component-sources]
+enabled = true
+verify_jwt = false
